@@ -66,6 +66,9 @@ until false; do
   if ls /dev/i2c-1; then 
     echo $(ls /dev/*i2c*)
     echo "Found i2c access!  Nothing to do!  You can remove this add-on.";
+
+    i2cdetect -y 0
+    i2cdetect -y 1
   else 
     echo "I don't see I2C."
     performWork sda1
